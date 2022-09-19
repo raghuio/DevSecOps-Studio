@@ -1,9 +1,7 @@
 Welcome to DevSecOps Studio Project!
 ===================
 
-[![Build Status](https://travis-ci.org/teacheraio/DevSecOps-Studio.svg?branch=master)](https://travis-ci.org/teacheraio/DevSecOps-Studio)
-
-DevSecOps Studio is one of its kind, self contained DevSecOps environment/distribution to help individuals in learning DevSecOps concepts. It takes lots of efforts to setup the environment for training/demos and more often, its error prone when done manually. DevSecOps Studio is easy to get started, mostly automatic and battle tested during our Free Practical DevSecOps Course at https://www.teachera.io/devsecops-course/
+DevSecOps Studio is one of its kind, self contained DevSecOps environment/distribution to help individuals in learning DevSecOps concepts. It takes lots of efforts to setup the environment for training/demos and more often, its error prone when done manually. DevSecOps Studio is easy to get started, mostly automatic and battle tested during our Practical DevSecOps Course at https://eracorp.io/devsecops/
 
 DevSecOps Studio project aims to reduce the time to bootstrap the environment and help you in concentrating on learning/teaching DevSecOps practices with the following features.
 
@@ -14,14 +12,14 @@ DevSecOps Studio project aims to reduce the time to bootstrap the environment an
 5. Compliance as code using Inspec
 6. QA security using ZAP, BDD-Security and Gauntlt
 7. Static tools like bandit, brakeman, windbags, gitrob, gitsecrets
-8. Security Monitoring using ELK stack. 
+8. Security Monitoring using ELK stack. [TBD] 
 
 
 > **Note:**
 
-> - We use this repo as companion to our Free [Practical DevSecOps course](https://www.teachera.io/devsecops-course/).
+> - We use this repo as companion to our [Practical DevSecOps course](https://eracorp.io/devsecops/).
 
-> - If you wish to join our free course, please click on __Join the course__ in the above link.
+> - If you wish to join our course, please click on the above link.
 
 ## How do I get set up? ###
 
@@ -76,9 +74,10 @@ DevSecOps Studio simulates the environment presented below.
 * [Ansible](http://docs.ansible.com/ansible/latest/intro_installation.html#installation)
 
 ### Hardware
-* Atleast 4GB of RAM for the virtual machines.
+* Atleast 8GB of RAM for the virtual machines.
 * 60GB of HDD Space.
 * Intel i3 Processor or above.
+* Virtualbox Version <= 6.1.26
 
 ## Dependencies
 
@@ -197,7 +196,7 @@ pip install ansible
 	```bash
 	vagrant up
 	```
-You can see how it all fits in DevSecOps pipeline by reading out [WIKI](https://github.com/teacheraio/DevSecOps-Studio/wiki)
+You can see how it all fits in DevSecOps pipeline by reading out [WIKI](https://github.com/raghuio/DevSecOps-Studio/wiki)
 
 ## How to use the setup
 
@@ -232,6 +231,8 @@ Utilities:| Git, Vim, curl, wget,
 - [x] Add Ansible Testing using molecule.
 - [ ] Add Container scanning using clair.
 - [x] Add Inspec for compliance.
+- [ ] Add ELK and monitoring setup.
+- [ ] Enable Jenkins based pipeline.
 
 ## Contribution guidelines
 
@@ -242,7 +243,8 @@ Utilities:| Git, Vim, curl, wget,
 ## Credits
 
 DevSecOps Studio uses some of the ansible roles from [Jeff](https://github.com/geerlingguy)
+Thanks to Mohammed A. Imran @secfigo for all valuable contributions and building the DevSecOps studio lab setup.
 
 ## Who do I talk to?
 
-* If you have any questions regarding this repo, please contact Mohammed A. Imran @secfigo and Raghunath G @raghunath24
+* If you have any questions regarding this repo, please contact Raghunath G @raghuio

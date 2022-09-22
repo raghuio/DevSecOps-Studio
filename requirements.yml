@@ -2,11 +2,10 @@
 - src: geerlingguy.pip
 - src: geerlingguy.ruby
 - src: geerlingguy.docker
-- src: geerlingguy.ansible-role-packer
+- src: geerlingguy.packer
 - src: geerlingguy.nginx
-- src: geerlingguy.elasticsearch
-- src: geerlingguy.kibana
-- src: geerlingguy.logstash
-- src: rvm_io.ruby
-- src: secfigo.terraform
-- src: secfigo.gauntlt
+# - src: geerlingguy.elasticsearch
+# - src: geerlingguy.kibana
+# - src: geerlingguy.logstash
+# - src: secfigo.terraform
+# - src: secfigo.gauntlt

@@ -1,5 +1,5 @@
 ---
-- name: Install curl, locales and apt-transport-https
+- name: Install curl, locales, python3-pip, and apt-transport-https
   apt:
     name: "{{ item }}"
     state: present
@@ -9,6 +9,7 @@
     - locales
     - apt-transport-https
     - sshpass
+    - python3-pip
 
 - name: Configure Locale as en_US.UTF-8
   locale_gen:

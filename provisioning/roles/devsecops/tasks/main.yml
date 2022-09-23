@@ -1,15 +1,13 @@
 ---
 
-- name: install pip3
-  apt: name=python3-pip state=present 
+- name: install pip3 and tree packages
+  apt:
+    name: ['python3-pip', 'tree']
+    state: present 
 
 - name: Install awscli, awsebcli, ansible, ansible-lint
   pip:
     name: ['awscli', 'awsebcli', 'ansible >= 6.4.0', 'ansible-lint >= 6.6.1']
-
-- name: Install tree package
-  apt:
-    name: tree
     state: present
 
 - name: Generate SSH key of vagrant user

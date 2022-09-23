@@ -4,8 +4,8 @@
 - src: geerlingguy.docker
 - src: geerlingguy.packer
 - src: geerlingguy.nginx
+- src: secfigo.terraform
 # - src: geerlingguy.elasticsearch
 # - src: geerlingguy.kibana
 # - src: geerlingguy.logstash
-# - src: secfigo.terraform
 # - src: secfigo.gauntlt

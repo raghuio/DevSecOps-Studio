@@ -30,6 +30,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
       if machine["ansible"] != nil
         box.vm.provision "ansible" do |ansible|
+            ansible.verbose = "v"
             ansible.playbook = machine["ansible"] 
         end
       end

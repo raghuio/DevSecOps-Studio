@@ -1,5 +1,4 @@
 ---
-
 - name: Make sure unzip is installed
   package: name=unzip state=present
 
@@ -9,5 +8,3 @@
     dest: "{{ terraform_bin_path }}"
     remote_src: true
     creates: "{{ terraform_bin_path }}/terraform"
-
-

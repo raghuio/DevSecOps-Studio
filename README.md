@@ -3,23 +3,21 @@ Welcome to DevSecOps Studio Project!
 
 DevSecOps Studio is one of its kind, self contained DevSecOps environment/distribution to help individuals in learning DevSecOps concepts. It takes lots of efforts to setup the environment for training/demos and more often, its error prone when done manually. DevSecOps Studio is easy to get started, mostly automatic and battle tested during our Practical DevSecOps Course at https://eracorp.io/devsecops/
 
-DevSecOps Studio project aims to reduce the time to bootstrap the environment and help you in concentrating on learning/teaching DevSecOps practices with the following features.
+DevSecOps Studio project aims to reduce the time to bootstrap the environment and help you in concentrating on learning DevSecOps practices with the below features.
 
-1. Easy to setup environment with just one command “vagrant up”
-2. Teaches Security as Code, Compliance as Code, Infrastructure as Code
-3. With built-in support for CI/CD pipeline
-4. OS hardening using ansible
+1. Easy to setup environment with few commands
+2. Covers Security as Code, Compliance as Code, Infrastructure as Code
+3. With built-in support for CI/CD pipeline (i.e. gitlab)
+4. Hardening infrastructure using ansible
 5. Compliance as code using Inspec
-6. QA security using ZAP, BDD-Security and Gauntlt
-7. Static tools like bandit, brakeman, windbags, gitrob, gitsecrets
-8. Security Monitoring using ELK stack. [TBD] 
-
+6. QA security using ZAP
+7. Static tools like bandit, brakeman,trufflehog, gitsecrets
 
 > **Note:**
 
-> - We use this repo as companion to our [Practical DevSecOps course](https://eracorp.io/devsecops/).
+> - This repository is used as companion to our [DevSecOps course](https://eracorp.io/devsecops/).
 
-> - If you wish to join our course, please click on the above link.
+> - The contents on the this repository might vary from the original repository.
 
 ## How do I get set up? ###
 

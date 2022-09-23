@@ -2,44 +2,50 @@
 dependencies: []
 
 galaxy_info:
+  role_name: ruby
   author: geerlingguy
   description: Ruby installation for Linux.
   company: "Midwestern Mac, LLC"
   license: "license (BSD, MIT)"
-  min_ansible_version: 2.0
+  min_ansible_version: 2.4
   platforms:
     - name: EL
       versions:
-      - all
+        - all
     - name: GenericUNIX
       versions:
-      - all
+        - all
     - name: Fedora
       versions:
-      - all
+        - all
     - name: opensuse
       versions:
-      - all
+        - all
     - name: GenericBSD
       versions:
-      - all
+        - all
     - name: FreeBSD
       versions:
-      - all
+        - all
     - name: Ubuntu
       versions:
-      - lucid
-      - trusty
-      - precise
+        - lucid
+        - trusty
+        - precise
+        - bionic
     - name: SLES
       versions:
-      - all
+        - all
     - name: GenericLinux
       versions:
-      - all
+        - all
     - name: Debian
       versions:
-      - all
+        - all
   galaxy_tags:
     - development
     - web
+    - ruby
+    - rails
+    - gem
+    - bundler

@@ -1,13 +1,11 @@
 ---
 
+- name: install pip3
+  apt: name=python3-pip state=present 
+
 - name: Install awscli, awsebcli, ansible, ansible-lint
   pip:
-    name: "{{ item }}"
-  with_items:
-    - awscli
-    - awsebcli
-    - ansible
-    - ansible-lint
+    name: ['awscli', 'awsebcli', 'ansible >= 6.4.0', 'ansible-lint >= 6.6.1']
 
 - name: Install tree package
   apt:

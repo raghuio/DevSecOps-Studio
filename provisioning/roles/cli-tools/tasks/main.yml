@@ -8,8 +8,8 @@
     - nikto
     - nmap
     - sqlmap
-    - python-pip
-    - python-virtualenv
+    - python3-pip
+    - python3-virtualenv
 
 - name: Install tools via pip
   pip:

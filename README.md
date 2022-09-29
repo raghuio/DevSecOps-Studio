@@ -1,23 +1,23 @@
 Welcome to DevSecOps Studio Project!
-===================
+=====================================
 
-DevSecOps Studio is one of its kind, self contained DevSecOps environment/distribution to help individuals in learning DevSecOps concepts. It takes lots of efforts to setup the environment for training/demos and more often, its error prone when done manually. DevSecOps Studio is easy to get started, mostly automatic and battle tested during our Practical DevSecOps Course at https://eracorp.io/devsecops/
+DevSecOps Studio is one of its kind, self hosted DevSecOps environment to help individuals,professionals in learning DevSecOps concepts. It takes lots of efforts to setup the environment for training/demos and more often, its error prone when done manually. DevSecOps Studio is easy to get started, pre-configured to most extent and used for our Practical DevSecOps Course at https://eracorp.io/devsecops/
 
 DevSecOps Studio project aims to reduce the time to bootstrap the environment and help you in concentrating on learning DevSecOps practices with the below features.
 
 1. Easy to setup environment with few commands
-2. Covers Security as Code, Compliance as Code, Infrastructure as Code
-3. With built-in support for CI/CD pipeline (i.e. gitlab)
-4. Hardening infrastructure using ansible
-5. Compliance as code using Inspec
-6. QA security using ZAP
-7. Static tools like bandit, brakeman,trufflehog, gitsecrets
+2. Covers Security as Code, Infrastructure as Code
+3. With built-in support for CI/CD pipeline, Docker registry (i.e. gitlab)
+4. Following environment can be used for Hardening infrastructure using ansible
+5. To test compliance as code using Inspec
+6. Ability to perform DAST scan using OWASP ZAP
+7. Can even run static check tools like bandit, brakeman,trufflehog, gitsecrets, etc.
 
 > **Note:**
 
 > - This repository is used as companion to our [DevSecOps course](https://eracorp.io/devsecops/).
 
-> - The contents on the this repository might vary from the original repository.
+> - Also, the contents in the this repository vary from original repository.
 
 ## How do I get set up? ###
 
@@ -27,7 +27,6 @@ DevSecOps Studio project aims to reduce the time to bootstrap the environment an
 * [Dependencies](#dependencies)
 	* [Mac OS X](#macos-optional)
 	* [Linux](#linux)
-	* [Windows](#windows-optional)
 * [DevSecOps Studio Installation](#installation)
 * [What's included in the environment](#whats-included-in-the-environment)
 * [How to use the setup](#how-to-use-the-setup)
@@ -72,10 +71,10 @@ DevSecOps Studio simulates the environment presented below.
 * [Ansible](http://docs.ansible.com/ansible/latest/intro_installation.html#installation)
 
 ### Hardware
-* Atleast 8GB of RAM for the virtual machines.
-* 60GB of HDD Space.
+* Atleast 8GB of RAM for the virtual machines and 16GB of memory on Host.
+* 80GB of HDD Space.
 * Intel i3 Processor or above.
-* Virtualbox Version <= 6.1.26
+* VirtualBox
 
 ## Dependencies
 
@@ -110,90 +109,25 @@ brew install ansible
 
 ### Linux
 
-Install with curl(run as root)
-
-``` bash
-curl -O https://raw.githubusercontent.com/raghuone/DevSecOps-Studio/master/setup/Linux_DevSecOps_Setup.sh && chmod +x Linux_DevSecOps_Setup.sh && ./Linux_DevSecOps_Setup.sh;
-```
-
-or 
-
 Install dependencies using apt-get
 
 [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
 
-``` bash
-sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian xenial contrib" >> /etc/apt/sources.list.d/virtualbox.list'
-
-wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
-
-sudo apt update
-
-sudo apt install virtualbox
-```
 [Vagrant](https://www.vagrantup.com/downloads.html)
 
 ``` bash
-sudo apt-get install vagrant python2 python2-pip
+sudo apt-get install vagrant python3 python3-pip
 ```
 [Ansible](http://docs.ansible.com/ansible/latest/intro_installation.html#installation)
 
 ``` bash
 pip install ansible
 ```
+or 
 
-### Windows (optional)
-
-Easiest solution for windows user is to use DevSecOps Studio Virtualbox Appliance
-1. Download DevSecOps-Studio Appliance (4.45 GB) from [this link](https://drive.google.com/open?id=1b3Z6BLndohpn_2HHcBfPFUpoSx78OKgG)
-
-2. Import the above Appliance by following [these step](https://docs.oracle.com/cd/E26217_01/E26796/html/qs-import-vm.html)
-
-
-Alternatively, Installation can be done using [chocolatey](https://chocolatey.org/install) by opening up command prompt  and using the following command.
-
-```bash
-@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+``` bash
+sudo apt install ansible
 ```
-
-Install dependencies using choco
-
-```bash
-choco install vagrant virtualbox git -y 
-```
-
-
-Install ansible via pip  
-> Installation on windows for ansible is not straight forward, please follow [these instructions](https://www.jeffgeerling.com/blog/running-ansible-within-windows) to install cygwin and then install ansible
-
-```bash
-choco install python2 -y #Installs python 2.7.x, includes pip under scripts folder of python27
-pip install ansible
-```
-
-## Installation
-
-1. Clone this repo or download the zip
-
-	```bash
-	$ git clone https://github.com/teacheraio/DevSecOps-Studio.git
-	```
-
-1. CD into the directory and check what boxes are available.
-
-	```bash
-	$ cd DevSecOps-Studio && vagrant status
-	```
-2. Download requirement ansible dependencies.
-    ```bash
-    $ ansible-galaxy install -r requirements.yml
-    ```
-
-3. Edit the machines.yml file to make any changes, if you are not sure please leave it as default. Meanwhile, go grab some coffee to enjoy :)
-
-	```bash
-	vagrant up
-	```
 You can see how it all fits in DevSecOps pipeline by reading out [WIKI](https://github.com/raghuio/DevSecOps-Studio/wiki)
 
 ## How to use the setup
@@ -206,29 +140,24 @@ The environment contains the following tools used in different stages of DevSecO
 
  Technology  | Tools
 ------------ | -------------
-PenTest Toolkit: | Nmap, Metasploit
-Static Analysis Tools: | Brakeman, bandit, findbugs
-Dynamic Analysis Tools: | ZAP proxy, Gaunlt
+PenTest Toolkit: | Nmap, Nikto
+Static Analysis Tools: | bandit
+Dynamic Analysis Tools: | ZAP proxy
 Hardening: | DevSec Ansible OS Hardening
-Compliance: | Inspec
-Operating System :| Ubuntu Xenial (16.04)
+Operating System :| Ubuntu Jammy (22.04) & Focal Fossa (20.04)
 Programming Languages: | Java, Python 2, Python 3, Ruby/Rails
 Container Technology:| Docker
 Source Code Management:| Gitlab (github like system)
-CI Server:| Gitlab CI/Jenkins
+CI Server:| Gitlab CI
+Docker Registry:| Gitlab 
 Configuration Management:| Ansible
-Monitoring and Log management:| Elastic Search, LogStash and Kibana
 Cloud Provider Utilities:| AWS CLI
 Utilities:| Git, Vim, curl, wget,
-
 
 ## Todo Features
 
 - [ ] Provision the stack on AWS using vagrant.
 - [ ] Build Images using Packer and upload to vagrant cloud.
-- [x] Add Ansible Testing using molecule.
-- [ ] Add Container scanning using clair.
-- [x] Add Inspec for compliance.
 - [ ] Add ELK and monitoring setup.
 - [ ] Enable Jenkins based pipeline.
 
@@ -240,8 +169,9 @@ Utilities:| Git, Vim, curl, wget,
 
 ## Credits
 
-DevSecOps Studio uses some of the ansible roles from [Jeff](https://github.com/geerlingguy)
-Thanks to Mohammed A. Imran @secfigo for all valuable contributions and building the DevSecOps studio lab setup.
+* DevSecOps Studio uses some of the ansible roles from [Jeff](https://github.com/geerlingguy)
+
+* Thanks to Mohammed A. Imran [@secfigo](https://github.com/secfigo) for all valuable contributions and building up DevSecOps studio lab setup.
 
 ## Who do I talk to?
 
